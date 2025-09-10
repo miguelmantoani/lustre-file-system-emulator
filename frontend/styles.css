@@ -1,0 +1,241 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    color: #1c1e21;
+}
+
+.main-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.file-browser-column, .details-column {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+h2 {
+    margin-top: 0;
+    color: #4b4f56;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.path-bar {
+    background-color: #f6f7f9;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    word-wrap: break-word;
+}
+
+#file-list {
+    list-style-type: none;
+    padding: 0;
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #e0e0e0;
+}
+
+#file-list li {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e9ebee;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#file-list li:hover {
+    background-color: #f6f7f9;
+}
+
+#file-list li.selected {
+    background-color: #e7f3ff;
+    border-left: 3px solid #1877f2;
+}
+
+#file-list li .icon {
+    font-size: 1.2em;
+}
+
+.upload-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+#upload-form {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #166fe5;
+}
+
+input[type="file"] {
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 6px;
+    flex-grow: 1;
+}
+
+#details-content {
+    background-color: #f6f7f9;
+    padding: 15px;
+    border-radius: 6px;
+    min-height: 100px;
+}
+
+#details-content p {
+    margin: 5px 0;
+}
+
+#set-layout-btn {
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#layout-form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+#layout-form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#layout-form button {
+    margin-top: 20px;
+    width: 100%;
+}
+/* --- NOVOS ESTILOS PARA VISUALIZAÇÃO --- */
+
+#visualization-container {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+#stripe-visualization {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.ost-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ost-label {
+    font-weight: bold;
+    font-size: 0.9em;
+    width: 60px; /* Largura fixa para alinhar as barras */
+}
+
+.ost-bar {
+    flex-grow: 1;
+    height: 30px;
+    background-color: #e9ebee;
+    border: 1px solid #dcdfe3;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    gap: 4px;
+    overflow-x: auto; /* Permite rolar se houver muitos chunks */
+}
+
+.chunk {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 22px;
+    width: 22px;
+    min-width: 22px; /* Evita que o chunk encolha */
+    border-radius: 3px;
+    font-size: 0.7em;
+    font-weight: bold;
+    color: white;
+    background-color: #1877f2; /* Cor padrão para o chunk do arquivo selecionado */
+    cursor: help; /* Mostra que tem dica ao passar o mouse */
+}

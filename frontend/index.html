@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emulador Lustre FS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Emulador de Sistema de Arquivos Lustre</h1>
+            <p>Navegue, envie arquivos e configure layouts de distribuição (striping).</p>
+        </header>
+
+        <main class="main-layout">
+            <div class="file-browser-column">
+                <h2>Navegador de Arquivos</h2>
+                <div class="path-bar">
+                    Caminho Atual: <strong id="current-path">/</strong>
+                </div>
+                <ul id="file-list"></ul>
+                <div class="actions-section">
+                    <button id="create-text-file-btn">Criar Arquivo de Texto</button>
+                </div>
+                <div class="upload-section">
+                    <h3>Upload de Arquivo</h3>
+                    <form id="upload-form">
+                        <input type="file" id="file-input" required>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="details-column">
+                <h2>Detalhes do Layout (lfs getstripe)</h2>
+                <div id="details-content">
+                    <p>Selecione um arquivo ou diretório para ver os detalhes.</p>
+                </div>
+                
+                <div id="visualization-container" class="hidden">
+                    <h3>Visualização da Distribuição (Striping)</h3>
+                    <div id="stripe-visualization">
+                        </div>
+                </div>
+
+                <button id="set-layout-btn" class="hidden">Configurar Layout</button>
+            </div>
+        </main>
+    </div>
+
+    <div id="layout-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-button" id="close-layout-modal">&times;</span>
+            <h2>Configurar Layout (lfs setstripe)</h2>
+            <p>Para: <strong id="modal-path"></strong></p>
+            <form id="layout-form">
+                <label for="stripe-count">Stripe Count (1-4):</label>
+                <input type="number" id="stripe-count" min="1" max="4" value="1" required>
+                <label for="stripe-size">Stripe Size (MB):</label>
+                <input type="number" id="stripe-size" min="1" value="1" required>
+                <button type="submit">Salvar Alterações</button>
+            </form>
+        </div>
+    </div>
+    <div id="text-file-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-button" id="close-text-file-modal">&times;</span>
+            <h2>Criar Novo Arquivo de Texto</h2>
+            <form id="create-text-form">
+                <label for="new-filename">Nome do Arquivo:</label>
+                <input type="text" id="new-filename" placeholder="ex: notas.txt" required>
+                <label for="new-file-content">Conteúdo:</label>
+                <textarea id="new-file-content" rows="10" placeholder="Escreva algo aqui..."></textarea>
+                <button type="submit">Salvar Arquivo</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
