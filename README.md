@@ -1,8 +1,5 @@
 # Emulador de Sistema de Arquivos Lustre
 
-![Screenshot da Aplicação](https_link_para_sua_imagem_aqui.png)
-*(Dica: Tire um print da sua aplicação funcionando, envie para um site como o [Imgur](https://imgur.com/upload) e cole o link da imagem aqui)*
-
 ## 📖 Sobre o Projeto
 
 Este projeto é uma aplicação web educacional desenvolvida para simular e visualizar os conceitos fundamentais do **Lustre**, um sistema de arquivos paralelo de alto desempenho. A aplicação permite que os usuários interajam com uma representação visual da arquitetura do Lustre, compreendendo na prática como funcionam a separação de metadados (MDS), o armazenamento de objetos (OSS) e a distribuição de dados (*striping*).
